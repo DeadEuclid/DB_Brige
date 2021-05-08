@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IRepository.cs" />
+    <Compile Include="models\ExemType.cs" />
     <Compile Include="models\PriceMod.cs" />
     <Compile Include="models\Route.cs" />
     <Compile Include="models\Station.cs" />

@@ -4,17 +4,15 @@ namespace DB_Brige
 {
     public class Route
     {
-        public Route(Station startStation, Station finishStation, List<Station> middleStations, double price)
+        public Route( List<Station> stations, double price)
         {
-            StartStation = startStation;
-            FinishStation = finishStation;
-            MiddleStations = middleStations;
+
+            Stations = stations;
             Price = price;
         }
 
-       public Station StartStation { get; set; }
-       public Station FinishStation { get; set; }
-       public List<Station> MiddleStations { get; set; }
+        public int Id { get; set; }
+        public List<Station> Stations { get; set; }
         public double Price { get; set; }
     }
 

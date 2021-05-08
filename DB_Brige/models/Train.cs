@@ -8,7 +8,7 @@ namespace DB_Brige
         {
             Wagons = wagons;
         }
-
+        public int Id { get; set; }
         public List<Wagon> Wagons { get; set; }
     }
 
