@@ -5,11 +5,15 @@
         PriceMod(float benefit, float firstClass)
         {
             Benefit = benefit;
+            FirstClass = firstClass;
         }
+        public PriceMod()
+        {
+        }
+
         public int Id { get; set; }
-        public int Id { get; set; }
-        public float Benefit { get; }
-        public float FirstClass { get; }
+        public float Benefit { get; set; }
+        public float FirstClass { get; set; }
 
     }
 
