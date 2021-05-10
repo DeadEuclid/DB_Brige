@@ -20,8 +20,7 @@ namespace Viewer
             InitializeComponent();
         }
 
-        public Dictionary<string, (Action<object, object> setvalue, TextBox text)> TextBoxes { get; set; } =
-            new Dictionary<string, (Action<object, object> setvalue, TextBox text)>();
+
         private void Init(Type viewType)
         {
             this.Data.Rows.Clear();
@@ -29,26 +28,9 @@ namespace Viewer
             var fields = viewType.GetProperties();
             this.Pairs = fields.Select(f => ((Func<object, object>)(f.GetValue), ((TitleAttribute)f.GetCustomAttributes(typeof(TitleAttribute), false).FirstOrDefault())?.Name)).Where(x => x.Name != null);
            
-            //var a = fields.Select(f => (setVal: (Action<object, object>)(f.SetValue), ((TitleAttribute)f.GetCustomAttributes(typeof(TitleAttribute), false).FirstOrDefault())?.Name)).Where(x => x.Name != null);
-
-            //foreach (var item in a) TextBoxes.Add(item.Name, (item.setVal, new TextBox()));
-            //foreach (var tb in TextBoxes.Select(x => x.Value.text)) this.Controls.Add(tb);
-
-
             foreach (var name in Pairs.Select(x => x.Name))
                 this.Data.Columns.Add(name.ToLower(), name);
         }
-
-        //public void Add(Type type)
-        //{
-        //    var data = Activator.CreateInstance(type);
-
-        //    foreach (var item in TextBoxes)
-        //    {
-        //        item.Value.setvalue(data, item.Value.text.Text);
-        //    }
-
-        //}
 
 
         public void ShowData(IEnumerable<object> items, Type viewType)
