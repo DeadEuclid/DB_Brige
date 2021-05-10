@@ -16,5 +16,4 @@
         public float FirstClass { get; set; }
 
     }
-
 }
