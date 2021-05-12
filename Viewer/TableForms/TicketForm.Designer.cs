@@ -1,7 +1,7 @@
 ﻿
 namespace Viewer
 {
-    partial class DataForm
+    partial class TicketForm
     {
         /// <summary>
         /// Required designer variable.
@@ -37,20 +37,24 @@ namespace Viewer
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Location = new System.Drawing.Point(3, 37);
+            this.panel1.AutoSize = true;
+            this.panel1.Location = new System.Drawing.Point(4, 46);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(785, 401);
+            this.panel1.Size = new System.Drawing.Size(1259, 494);
             this.panel1.TabIndex = 0;
             // 
             // DataForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1279, 554);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "DataForm";
             this.Text = "DataForm";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

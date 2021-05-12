@@ -39,18 +39,22 @@ namespace Viewer
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Data.Location = new System.Drawing.Point(3, 3);
+            this.Data.Location = new System.Drawing.Point(4, 4);
+            this.Data.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Data.Name = "Data";
-            this.Data.Size = new System.Drawing.Size(985, 703);
+            this.Data.RowHeadersWidth = 51;
+            this.Data.Size = new System.Drawing.Size(2132, 865);
             this.Data.TabIndex = 0;
             // 
             // DataViewer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.Controls.Add(this.Data);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "DataViewer";
-            this.Size = new System.Drawing.Size(991, 709);
+            this.Size = new System.Drawing.Size(2140, 873);
             ((System.ComponentModel.ISupportInitialize)(this.Data)).EndInit();
             this.ResumeLayout(false);
 

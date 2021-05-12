@@ -11,9 +11,9 @@ using DB_Brige;
 
 namespace Viewer
 {
-    public partial class DataForm : Form
+    public partial class TicketForm : Form
     {
-        public DataForm()
+        public TicketForm()
         {
             InitializeComponent();
             this.Viewer = new DataViewer();
@@ -25,10 +25,12 @@ namespace Viewer
         public void Init()
         {
             var rep = new StationContext();
-            //rep.Tickets.Add(new Ticket(DateTime.Now, new Station("Срань 1"), new Station("Срань 3"),
-            //    new Wagon(33, WagonClass.First), 3, 53454, 453, "Критинов", "Василий", "Васильевич",
-            //    new Trip(new Train(new List<Wagon>()), new TimeTable(), new Route(new List<Station>(), 234))));
-            //rep.SaveChanges();
+            rep.Tickets.Add(new Ticket(DateTime.Now, new Station("Срань 1"), new Station("Срань 3"),
+                new Wagon(33, WagonClass.First), 3, 53454, 453, "Критинов", "Василий", "Васильевич",
+                new Trip(new Train(new List<Wagon>()), new TimeTable(), new Route(new List<Station>(), 234))));
+            rep.SaveChanges();
+
+            rep.SaveChanges();
             this.Viewer.ShowData(rep.Tickets.ToList(), typeof(Ticket));
         }
 
