@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Runtime;
 
-namespace DB_Brige
+namespace Viewer
 {
 
     public class Ticket
@@ -71,7 +71,7 @@ namespace DB_Brige
 
         [NotMapped]
         [Title("Маршрут")]
-        public string Route => Trip?.Route?.TripTitle;
+        public string Route => Trip?.TimeTable?.Route?.TripTitle;
 
         [Title("Цена")]
         public double Price { get; set; }

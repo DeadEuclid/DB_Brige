@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Viewer
+namespace DB_Brige
 {
     public class TitleAttribute : Attribute
     {

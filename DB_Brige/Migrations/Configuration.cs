@@ -1,18 +1,18 @@
-﻿namespace DB_Brige.Migrations
+﻿namespace Viewer.Migrations
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<DB_Brige.StationContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<Viewer.StationContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(DB_Brige.StationContext stationContext)
+        protected override void Seed(StationContext stationContext)
         {
             //  This method will be called after migrating to the latest version.
 

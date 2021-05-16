@@ -1,4 +1,4 @@
-﻿namespace DB_Brige
+﻿namespace Viewer
 {
     public class PriceMod
     {

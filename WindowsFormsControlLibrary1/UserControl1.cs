@@ -1,33 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Drawing;
+using System.Data;
 using System.Linq;
-using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DB_Brige;
 
-namespace Viewer
+namespace WindowsFormsControlLibrary1
 {
-    public partial class DataViewer : UserControl
+    public partial class UserControl1: UserControl
     {
-        public DataViewer()
+        public UserControl1()
         {
             InitializeComponent();
         }
-
-
         private void Init(Type viewType)
         {
             this.Data.Rows.Clear();
             this.Data.Columns.Clear();
             var fields = viewType.GetProperties();
             this.Pairs = fields.Select(f => ((Func<object, object>)(f.GetValue), ((TitleAttribute)f.GetCustomAttributes(typeof(TitleAttribute), false).FirstOrDefault())?.Name)).Where(x => x.Name != null);
-           
+
             foreach (var name in Pairs.Select(x => x.Name))
                 this.Data.Columns.Add(name.ToLower(), name);
         }

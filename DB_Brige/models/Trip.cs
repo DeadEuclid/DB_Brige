@@ -1,4 +1,6 @@
-﻿namespace DB_Brige
+﻿using System;
+
+namespace Viewer
 {
     public class Trip
     {
@@ -6,11 +8,11 @@
         {
             Train = train;
             TimeTable = timeTable;
-            Route = route;
+            //Route = route;
         }
         public int Id { get; set; }
         public Train Train { get; set; }
-        public Route Route { get; set; }
         public TimeTable TimeTable { get; set; }
+        public DateTime DepartureDate { get; set; }
     }
 }

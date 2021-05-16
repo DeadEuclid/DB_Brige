@@ -1,4 +1,4 @@
-﻿namespace DB_Brige.Migrations
+﻿namespace Viewer.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;

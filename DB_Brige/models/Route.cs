@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Runtime.CompilerServices;
 
-namespace DB_Brige
+namespace Viewer
 {
     public class Route
     {
@@ -13,6 +13,7 @@ namespace DB_Brige
             Stations = stations;
             Price = price;
         }
+        
 
         [Title("№")]
         public int Id { get; set; }
@@ -20,7 +21,7 @@ namespace DB_Brige
         
         [NotMapped]
         [Title("Маршрут")]
-        public string TripTitle => Stations.Count > 2 ? $"{Stations.First().Name} ---> {Stations.Last().Name}" : "Поезд в небытие";
+        public string TripTitle => Stations.Count >= 2 ? $"{Stations.First().Name} - {Stations.Last().Name}" : "Поезд в небытие";
         
         [Title("Цена без надбавок")]
         public double Price { get; set; }
