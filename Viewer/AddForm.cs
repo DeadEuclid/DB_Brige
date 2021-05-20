@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AutoGrid;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,7 +23,7 @@ namespace Viewer
         public void Init(Type viewType)
         {
             var fields = viewType.GetProperties();
-            var a = fields.Select(f => (info: (f), ((TitleAttribute)f.GetCustomAttributes(typeof(TitleAttribute), false).FirstOrDefault())?.Name)).Where(x => x.Name != null);
+            var a = fields.Select(f => (info: (f), ((Title)f.GetCustomAttributes(typeof(Title), false).FirstOrDefault())?.Name)).Where(x => x.Name != null);
 
             foreach (var item in a) TextBoxes.Add(item.Name, (item.info, new TextBox()));
 

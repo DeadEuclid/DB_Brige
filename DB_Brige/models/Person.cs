@@ -1,4 +1,5 @@
-﻿namespace Viewer
+﻿using AutoGrid;
+namespace Viewer
 {
     public class Person
     {

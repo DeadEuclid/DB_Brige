@@ -45,7 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="TitleAtrtibute.cs" />
+    <Compile Include="Title.cs" />
     <Compile Include="DataViewer.cs">
       <SubType>UserControl</SubType>
     </Compile>

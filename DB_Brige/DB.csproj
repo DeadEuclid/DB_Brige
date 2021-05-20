@@ -89,7 +89,6 @@
     <Compile Include="models\Route.cs" />
     <Compile Include="models\Station.cs" />
     <Compile Include="models\Ticket.cs" />
-    <Compile Include="models\TitleAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="models\TimeTable.cs" />
     <Compile Include="models\Train.cs" />
@@ -118,6 +117,12 @@
     <EmbeddedResource Include="Migrations\202105200406339_minor-migration.resx">
       <DependentUpon>202105200406339_minor-migration.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AutoGrid\AutoGrid.csproj">
+      <Project>{1c5a6cbf-1079-4be2-9158-fed91945352b}</Project>
+      <Name>AutoGrid</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

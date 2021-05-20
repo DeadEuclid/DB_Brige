@@ -7,7 +7,7 @@ using System.Runtime;
 
 namespace Viewer
 {
-
+    using AutoGrid;
     public class Ticket
     {
         public Ticket(DateTime departureTime, Station departure, Station destination, Wagon wagon, int palesNum, int passportSeries, int passportNum, string lastName, string firstName, string middleName, Trip trip)

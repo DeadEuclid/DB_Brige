@@ -1,7 +1,7 @@
 ﻿
 namespace Viewer.TableForms
 {
-    partial class Form1
+    partial class PersonForm
     {
         /// <summary>
         /// Required designer variable.

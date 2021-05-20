@@ -8,13 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Viewer
+namespace Viewer.TableForms
 {
-    public partial class Form1 : Form
+    public partial class PersonForm : Form
     {
-        public Form1()
+        public PersonForm()
         {
             InitializeComponent();
+            
         }
     }
 }

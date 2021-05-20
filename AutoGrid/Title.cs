@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace AutoGrid
 {
-    class TitleAtrtibute : Attribute
+   public class Title : Attribute
     {
-        public TitleAtrtibute(string name)
+        public Title(string name)
         {
             Name = name;
         }

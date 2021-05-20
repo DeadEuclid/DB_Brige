@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Viewer.TableForm;
 
 namespace Viewer
 {
@@ -16,8 +17,9 @@ namespace Viewer
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TicketForm());
+            Application.Run(new PersonForm());
 
         }
     }
 }
+

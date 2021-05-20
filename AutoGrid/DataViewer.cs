@@ -22,7 +22,7 @@ namespace AutoGrid
             this.DataGrid.Rows.Clear();
             this.DataGrid.Columns.Clear();
             var fields = viewType.GetProperties();
-            this.Pairs = fields.Select(f => ((Func<object, object>)(f.GetValue), ((TitleAtrtibute)f.GetCustomAttributes(typeof(TitleAtrtibute), false).FirstOrDefault())?.Name)).Where(x => x.Name != null);
+            this.Pairs = fields.Select(f => ((Func<object, object>)(f.GetValue), ((Title)f.GetCustomAttributes(typeof(Title), false).FirstOrDefault())?.Name)).Where(x => x.Name != null);
 
             foreach (var name in Pairs.Select(x => x.Name))
                 this.DataGrid.Columns.Add(name.ToLower(), name);
@@ -71,7 +71,7 @@ namespace AutoGrid
             this.DataGrid.Rows.Clear();
             this.DataGrid.Columns.Clear();
             var fields = viewType.GetProperties();
-            this.Pairs = fields.Select(f => ((Func<object, object>)(f.GetValue), ((TitleAtrtibute)f.GetCustomAttributes(typeof(TitleAtrtibute), false).FirstOrDefault())?.Name)).Where(x => x.Name != null);
+            this.Pairs = fields.Select(f => ((Func<object, object>)(f.GetValue), ((Title)f.GetCustomAttributes(typeof(Title), false).FirstOrDefault())?.Name)).Where(x => x.Name != null);
 
             foreach (var name in Pairs.Select(x => x.Name))
                 this.DataGrid.Columns.Add(name.ToLower(), name);
