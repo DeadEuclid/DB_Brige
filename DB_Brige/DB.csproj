@@ -5,7 +5,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8A461E5B-93BF-49A9-B9A0-35BC998F5231}</ProjectGuid>
+    <ProjectGuid>{7717246E-E784-4E1B-91E2-1C43012A0969}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DB_Brige</RootNamespace>
@@ -74,6 +74,14 @@
     <Compile Include="Migrations\202105101622389_datatime2.designer.cs">
       <DependentUpon>202105101622389_datatime2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105161436225_MtoMforStations&amp;RoutesAndLittleFix.cs" />
+    <Compile Include="Migrations\202105161436225_MtoMforStations&amp;RoutesAndLittleFix.designer.cs">
+      <DependentUpon>202105161436225_MtoMforStations&amp;RoutesAndLittleFix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105200406339_minor-migration.cs" />
+    <Compile Include="Migrations\202105200406339_minor-migration.designer.cs">
+      <DependentUpon>202105200406339_minor-migration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="models\ExemType.cs" />
     <Compile Include="models\Person.cs" />
@@ -103,6 +111,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105101622389_datatime2.resx">
       <DependentUpon>202105101622389_datatime2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105161436225_MtoMforStations&amp;RoutesAndLittleFix.resx">
+      <DependentUpon>202105161436225_MtoMforStations&amp;RoutesAndLittleFix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105200406339_minor-migration.resx">
+      <DependentUpon>202105200406339_minor-migration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

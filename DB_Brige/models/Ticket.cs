@@ -71,7 +71,7 @@ namespace Viewer
 
         [NotMapped]
         [Title("Маршрут")]
-        public string Route => Trip?.TimeTable?.Route?.TripTitle;
+        public string Route => Trip?.TimeTable?.Route?.RouteTitle;
 
         [Title("Цена")]
         public double Price { get; set; }

@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31129.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DB_Brige", "DB_Brige\DB_Brige.csproj", "{8A461E5B-93BF-49A9-B9A0-35BC998F5231}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Viewer", "Viewer\Viewer.csproj", "{6336C5F7-72E2-4C76-923F-AAFB65C73DF3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject1", "UnitTestProject1\UnitTestProject1.csproj", "{91AAB300-5DF2-4249-B39D-EA938F8C86BD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoGrid", "..\Cases\DataViewTools\AutoGrid.csproj", "{98220968-E26E-411D-AE86-DD80D854A782}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DB", "DB_Brige\DB.csproj", "{7717246E-E784-4E1B-91E2-1C43012A0969}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoGrid", "AutoGrid\AutoGrid.csproj", "{1C5A6CBF-1079-4BE2-9158-FED91945352B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8A461E5B-93BF-49A9-B9A0-35BC998F5231}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8A461E5B-93BF-49A9-B9A0-35BC998F5231}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8A461E5B-93BF-49A9-B9A0-35BC998F5231}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8A461E5B-93BF-49A9-B9A0-35BC998F5231}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6336C5F7-72E2-4C76-923F-AAFB65C73DF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6336C5F7-72E2-4C76-923F-AAFB65C73DF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6336C5F7-72E2-4C76-923F-AAFB65C73DF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -29,10 +25,14 @@ Global
 		{91AAB300-5DF2-4249-B39D-EA938F8C86BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{91AAB300-5DF2-4249-B39D-EA938F8C86BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{91AAB300-5DF2-4249-B39D-EA938F8C86BD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{98220968-E26E-411D-AE86-DD80D854A782}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{98220968-E26E-411D-AE86-DD80D854A782}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{98220968-E26E-411D-AE86-DD80D854A782}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{98220968-E26E-411D-AE86-DD80D854A782}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7717246E-E784-4E1B-91E2-1C43012A0969}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7717246E-E784-4E1B-91E2-1C43012A0969}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7717246E-E784-4E1B-91E2-1C43012A0969}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7717246E-E784-4E1B-91E2-1C43012A0969}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C5A6CBF-1079-4BE2-9158-FED91945352B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C5A6CBF-1079-4BE2-9158-FED91945352B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C5A6CBF-1079-4BE2-9158-FED91945352B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C5A6CBF-1079-4BE2-9158-FED91945352B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

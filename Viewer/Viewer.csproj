@@ -123,16 +123,15 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Cases\DataViewTools\AutoGrid.csproj">
-      <Project>{98220968-e26e-411d-ae86-dd80d854a782}</Project>
+    <ProjectReference Include="..\AutoGrid\AutoGrid.csproj">
+      <Project>{1c5a6cbf-1079-4be2-9158-fed91945352b}</Project>
       <Name>AutoGrid</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DB_Brige\DB_Brige.csproj">
-      <Project>{8A461E5B-93BF-49A9-B9A0-35BC998F5231}</Project>
-      <Name>DB_Brige</Name>
+    <ProjectReference Include="..\DB_Brige\DB.csproj">
+      <Project>{7717246e-e784-4e1b-91e2-1c43012a0969}</Project>
+      <Name>DB</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

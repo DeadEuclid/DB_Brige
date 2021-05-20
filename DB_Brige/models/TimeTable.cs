@@ -6,7 +6,7 @@ namespace Viewer
     {
         public int Id { get; set; }
         public DateTime DepartureTime { get; set; }
-        public string WeakTable { get; set; }
+        public string WeekTable { get; set; }
         public Route Route { get; set; }
 
     }
