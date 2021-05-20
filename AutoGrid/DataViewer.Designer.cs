@@ -49,7 +49,7 @@
             this.DataGrid.Name = "DataGrid";
             this.DataGrid.RowHeadersWidth = 51;
             this.DataGrid.RowTemplate.Height = 24;
-            this.DataGrid.Size = new System.Drawing.Size(3472, 1722);
+            this.DataGrid.Size = new System.Drawing.Size(2132, 1081);
             this.DataGrid.TabIndex = 0;
             // 
             // DataViewer

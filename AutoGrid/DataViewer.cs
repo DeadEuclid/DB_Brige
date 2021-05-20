@@ -15,46 +15,46 @@ namespace AutoGrid
         public DataViewer()
         {
             InitializeComponent();
-            //GridProcessor = new DataGridProcessor(DataGrid);
+            GridProcessor = new DataGridProcessor(DataGrid);
         }
-        private void Init(Type viewType)
-        {
-            this.DataGrid.Rows.Clear();
-            this.DataGrid.Columns.Clear();
-            var fields = viewType.GetProperties();
-            this.Pairs = fields.Select(f => ((Func<object, object>)(f.GetValue), ((Title)f.GetCustomAttributes(typeof(Title), false).FirstOrDefault())?.Name)).Where(x => x.Name != null);
+        //private void Init(Type viewType)
+        //{
+        //    this.DataGrid.Rows.Clear();
+        //    this.DataGrid.Columns.Clear();
+        //    var fields = viewType.GetProperties();
+        //    this.Pairs = fields.Select(f => ((Func<object, object>)(f.GetValue), ((Title)f.GetCustomAttributes(typeof(Title), false).FirstOrDefault())?.Name)).Where(x => x.Name != null);
 
-            foreach (var name in Pairs.Select(x => x.Name))
-                this.DataGrid.Columns.Add(name.ToLower(), name);
-        }
+        //    foreach (var name in Pairs.Select(x => x.Name))
+        //        this.DataGrid.Columns.Add(name.ToLower(), name);
+        //}
 
 
-        public void ShowData(IEnumerable<object> items, Type viewType)
-        {
-            Init(items.GetType().GetGenericArguments()[0]);
-
-            foreach (var item in items)
-            {
-                var index = DataGrid.Rows.Count - 1;
-                DataGrid.Rows.Add();
-                int col = 0;
-
-                foreach (var pair in Pairs)
-                {
-                    var val = pair.GetFunc(item);
-                    if (val != null)
-                        DataGrid[col, index].Value = val.ToString();
-                    col++;
-                }
-            }
-        }
-
-        public IEnumerable<(Func<object, object> GetFunc, string Name)> Pairs { get; set; }
-        //DataGridProcessor GridProcessor;
         //public void ShowData(IEnumerable<object> items, Type viewType)
         //{
-        //    GridProcessor.ShowData(items, viewType);
+        //    Init(items.GetType().GetGenericArguments()[0]);
+
+        //    foreach (var item in items)
+        //    {
+        //        var index = DataGrid.Rows.Count - 1;
+        //        DataGrid.Rows.Add();
+        //        int col = 0;
+
+        //        foreach (var pair in Pairs)
+        //        {
+        //            var val = pair.GetFunc(item);
+        //            if (val != null)
+        //                DataGrid[col, index].Value = val.ToString();
+        //            col++;
         //        }
+        //    }
+        //}
+
+        //public IEnumerable<(Func<object, object> GetFunc, string Name)> Pairs { get; set; }
+     DataGridProcessor GridProcessor;
+        public void ShowData(IEnumerable<object> items, Type viewType)
+        {
+            GridProcessor.ShowData(items, viewType);
+        }
 
 
 
