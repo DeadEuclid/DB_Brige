@@ -10,6 +10,7 @@ using System.Reflection;
 namespace AutoGrid
 {
     public class Title : Attribute
+    public class Title : Attribute, ITitle
     {
         public Title(string name)
         {
@@ -30,33 +31,42 @@ namespace AutoGrid
 
         public static string GetTitle(this Type type)
         {
-            var title = (Title)type.GetCustomAttributes(false).Where(a => a.GetType() == typeof(Title)).First();
+            var title = (Title)type.GetCustomAttributes(false).First(a => a.GetType() == typeof(Title));
             return title.Name;
         }
-        public static string[] GetTitlesPropery(this Type type)
+        public static IEnumerable<string> GetTitlesProperty(this Type type)
         {
-            return type.GetProperties().Select(t => (Title)t.GetCustomAttribute(typeof(Title))).Select(title => title?.Name ).Where(title=>title != null).ToArray();
+            return GetPropertyAttributes<Title>(type).Select(x => x.Name);
         }
+
+        public static IEnumerable<T> GetPropertyAttributes<T>(this Type type) where T : Attribute => 
+            type.GetProperties().Select(t => (T)t.GetCustomAttribute(typeof(T))).Where(title => title != null).ToArray();
+
+        public static IEnumerable<KeyValuePair<PropertyInfo, T>> GetPropertiesWithAttribute<T>(this Type type) where T : Attribute => 
+            type.GetProperties().Select(t => new KeyValuePair<PropertyInfo, T>(t, (T)t.GetCustomAttribute(typeof(T)))).Where(pair => pair.Value != null);
+
         public static string GetTitleValue(this Enum enumVal)
         {
-             var valueName= enumVal.ToString();
-           return GetTitleValue(enumVal, valueName);
+            var valueName = enumVal.ToString();
+            return GetTitleValue(enumVal, valueName);
         }
-        private static string GetTitleValue(Enum enumVal,string valueName)
+
+
+        private static string GetTitleValue(Enum enumVal, string valueName)
         {
             var title = (Title)enumVal.GetType().GetMember(valueName)[0].GetCustomAttribute(typeof(Title), false);
             return title.Name;
         }
         public static Dictionary<string, string> GetTitlesValue(this Enum enumVal)
         {
-            var dic = new Dictionary<string,string>();
+            var dic = new Dictionary<string, string>();
             var names = enumVal.GetType().GetEnumNames();
             foreach (var name in names)
             {
                 string title = GetTitleValue(enumVal, name);
-                if (title!=null)
+                if (title != null)
                 {
-                     dic.Add(name,title );
+                    dic.Add(name, title);
                 }
 
             }
