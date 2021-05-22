@@ -33,7 +33,7 @@ namespace Viewer
             Controls.Add(new TextInputControl("Базовая цена билета"));
         }
 
-        void AddControls()
+        void Init()
         {
             int i = 0;
 
@@ -59,8 +59,9 @@ namespace Viewer
                 Controls.Add(control);
             }
 
-            AddControls();
+            Init();
         }
+
         void StationAdd()
         {
             Controls.Add(new ComboWithControlControler("Машруты станции"));
@@ -88,7 +89,7 @@ namespace Viewer
         {
             Cadd(new ChoseInputControl("Поезд"));
             Cadd(new ChoseInputControl("Расписание"));
-            Cadd(new DateIputControl("Дата отправления"));
+            Cadd(new DateInputControl("Дата отправления"));
         }
         void WagonAdd()
         {

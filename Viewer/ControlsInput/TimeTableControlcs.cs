@@ -10,12 +10,16 @@ using System.Windows.Forms;
 
 namespace Viewer.ControlsInput
 {
-    public partial class DateIputControl : UserControl
+    public partial class TimeTableControlcs : UserControl
     {
-        public DateIputControl(string label)
+        public TimeTableControlcs()
         {
             InitializeComponent();
-            label1.Text = label;
+        }
+
+        private void TimeTableControlcs_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

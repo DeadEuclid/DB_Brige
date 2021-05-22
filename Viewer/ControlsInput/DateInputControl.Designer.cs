@@ -1,7 +1,7 @@
 ﻿
 namespace Viewer.ControlsInput
 {
-    partial class DateIputControl
+    partial class DateInputControl
     {
         /// <summary> 
         /// Обязательная переменная конструктора.
