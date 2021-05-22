@@ -1,8 +1,10 @@
 ﻿using AutoGrid;
 namespace Viewer
 {
+        [Title("пасажиров")]
     public class Person
     {
+
         public Person(string firstName, string lastName, string middleName = null)
         {
             FirstName = firstName;

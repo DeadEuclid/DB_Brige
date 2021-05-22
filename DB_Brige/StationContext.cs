@@ -25,7 +25,7 @@ namespace Viewer
         public DbSet<Trip> Trips { get; set; }
         public DbSet<Ticket> Tickets { get; set; }
         public DbSet<Train> Trains { get; set; }
-        public DbSet<Person> Clients { get; set; }
+        public DbSet<Person> Persons { get; set; }
         public DbSet<Station> Stations { get; set; }
         public DbSet<TimeTable> TimeTables { get; set; }
         public DbSet<Wagon> Wagons { get; set; }

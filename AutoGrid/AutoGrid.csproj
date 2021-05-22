@@ -45,6 +45,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataGridProcessor.cs" />
+    <Compile Include="InvintationTitle.cs" />
     <Compile Include="Title.cs" />
     <Compile Include="DataViewer.cs">
       <SubType>UserControl</SubType>

@@ -8,6 +8,8 @@ using System.Runtime;
 namespace Viewer
 {
     using AutoGrid;
+    [Title("билетов")]
+
     public class Ticket
     {
         public Ticket(DateTime departureTime, Station departure, Station destination, Wagon wagon, int palesNum, int passportSeries, int passportNum, string lastName, string firstName, string middleName, Trip trip)
@@ -41,7 +43,7 @@ namespace Viewer
 
         [NotMapped]
         [Title("Вагон")]
-        public string WagonInfo => $"№{Wagon?.Id} ";
+        public string WagonInfo => $"№{Wagon?.Number} ";
         public Wagon Wagon { get; set; }
 
         [Title("Номер места")]

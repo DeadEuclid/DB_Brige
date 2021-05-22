@@ -82,10 +82,13 @@
     <Compile Include="Migrations\202105200406339_minor-migration.designer.cs">
       <DependentUpon>202105200406339_minor-migration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105200706234_WagonTrain_number.cs" />
+    <Compile Include="Migrations\202105200706234_WagonTrain_number.designer.cs">
+      <DependentUpon>202105200706234_WagonTrain_number.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="models\ExemType.cs" />
     <Compile Include="models\Person.cs" />
-    <Compile Include="models\PriceMod.cs" />
     <Compile Include="models\Route.cs" />
     <Compile Include="models\Station.cs" />
     <Compile Include="models\Ticket.cs" />
@@ -116,6 +119,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105200406339_minor-migration.resx">
       <DependentUpon>202105200406339_minor-migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105200706234_WagonTrain_number.resx">
+      <DependentUpon>202105200706234_WagonTrain_number.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

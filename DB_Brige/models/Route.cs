@@ -6,6 +6,7 @@ using AutoGrid;
 
 namespace Viewer
 {
+    [Title("маршрутов")]
     public class Route
     {
         public Route(List<Station> stations, double price)
@@ -14,15 +15,19 @@ namespace Viewer
             Stations = stations;
             Price = price;
         }
+        public Route()
+        {
+            Stations = new List<Station>();
+        }
+         
         
 
-        [Title("№")]
         public int Id { get; set; }
         public List<Station> Stations { get; set; }
         
         [NotMapped]
         [Title("Маршрут")]
-        public string RouteTitle => Stations.Count >= 2 ? $"{Stations.First().Name} - {Stations.Last().Name}" : "Поезд в небытие";
+        public string RouteTitle => Stations.Count >= 2 ? $"{Stations.First().Name} - {Stations.Last().Name}" : "---";
         
         [Title("Цена без надбавок")]
         public double Price { get; set; }

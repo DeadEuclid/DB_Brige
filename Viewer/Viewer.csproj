@@ -64,6 +64,60 @@
     <Compile Include="AddForm.Designer.cs">
       <DependentUpon>AddForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddForm1.Designer.cs">
+      <DependentUpon>AddForm1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChoseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChoseForm.Designer.cs">
+      <DependentUpon>ChoseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlsInput\ChoseInputControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlsInput\ChoseInputControl.Designer.cs">
+      <DependentUpon>ChoseInputControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlsInput\ComboInputControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlsInput\ComboInputControl.Designer.cs">
+      <DependentUpon>ComboInputControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlsInput\ComboWithControlControler.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlsInput\ComboWithControlControler.Designer.cs">
+      <DependentUpon>ComboWithControlControler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlsInput\DateIputControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlsInput\DateIputControl.Designer.cs">
+      <DependentUpon>DateIputControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlsInput\HeadAddFormControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlsInput\HeadAddFormControl.Designer.cs">
+      <DependentUpon>HeadAddFormControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlsInput\TextInputControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlsInput\TextInputControl.Designer.cs">
+      <DependentUpon>TextInputControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlsInput\TimeInputControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlsInput\TimeInputControl.Designer.cs">
+      <DependentUpon>TimeInputControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,14 +126,41 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TableForm\PersonForm.cs">
+    <Compile Include="TableForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TableForm\PersonForm.Designer.cs">
-      <DependentUpon>PersonForm.cs</DependentUpon>
+    <Compile Include="TableForm.Designer.cs">
+      <DependentUpon>TableForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AddForm.resx">
       <DependentUpon>AddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddForm1.resx">
+      <DependentUpon>AddForm1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChoseForm.resx">
+      <DependentUpon>ChoseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlsInput\ChoseInputControl.resx">
+      <DependentUpon>ChoseInputControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlsInput\ComboInputControl.resx">
+      <DependentUpon>ComboInputControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlsInput\ComboWithControlControler.resx">
+      <DependentUpon>ComboWithControlControler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlsInput\DateIputControl.resx">
+      <DependentUpon>DateIputControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlsInput\HeadAddFormControl.resx">
+      <DependentUpon>HeadAddFormControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlsInput\TextInputControl.resx">
+      <DependentUpon>TextInputControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlsInput\TimeInputControl.resx">
+      <DependentUpon>TimeInputControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -93,8 +174,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="TableForm\PersonForm.resx">
-      <DependentUpon>PersonForm.cs</DependentUpon>
+    <EmbeddedResource Include="TableForm.resx">
+      <DependentUpon>TableForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -119,6 +200,9 @@
       <Project>{7717246e-e784-4e1b-91e2-1c43012a0969}</Project>
       <Name>DB</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DemoAddForms\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

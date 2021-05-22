@@ -16,6 +16,7 @@ namespace Viewer
     {
         public AddForm()
         {
+
             InitializeComponent();
             Init(typeof(Ticket));
         }
