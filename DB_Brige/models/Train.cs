@@ -19,6 +19,8 @@ namespace Viewer
         }
         public int Id { get; set; }
         [Title("№ Поезда")]
+        [AddableBDTitle("Номер поезда")]
+
         public int Number { get; set; }
         [NotMapped]
         [Title("Кол-во мест")]
@@ -27,8 +29,7 @@ namespace Viewer
         public int SeatsCountFirstClass => Wagons.Where(w=>w.WagonClass==WagonClass.First).Select(w => w.SeatsCount).Sum();
         [NotMapped]
         public int SeatsCountSecondClass => Wagons.Where(w => w.WagonClass == WagonClass.Second).Select(w => w.SeatsCount).Sum();
-
-
+        [AddableBDTitle("Вагоны в составе")]
         public List<Wagon> Wagons { get; set; }
     }
 

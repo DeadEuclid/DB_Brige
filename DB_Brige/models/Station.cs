@@ -17,7 +17,10 @@ namespace Viewer
         }
         public int Id { get; set; }
        [Title("Название станции")]
+       [AddableBDTitle("Название станции")]
         public string Name { get; set; }
+        [AddableBDTitle("Маршруты")]
+
         public List<Route> Routes { get; set; }
     }
 

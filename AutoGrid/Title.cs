@@ -10,7 +10,6 @@ using System.Reflection;
 namespace AutoGrid
 {
     public class Title : Attribute
-    public class Title : Attribute, ITitle
     {
         public Title(string name)
         {

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Viewer.ControlsInput
 {
-    public partial class TimeTableControlcs : UserControl
+    public partial class TimeTableControlcs : UserControl, IControlInput
     {
         public TimeTableControlcs()
         {

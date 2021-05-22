@@ -10,20 +10,22 @@ namespace Viewer
         public Wagon(int seatsCount, WagonClass wagonClass,int number)
         {
             SeatsCount = seatsCount;
-           // Class = wagonClass;
             Number = number;
         }
         public Wagon()
         { }
         public int Id { get; set; }
         [Title("№ Вагона")]
+        [AddableBDTitle("№ Вагона")]
         public int Number { get; set; }
         [Title("Кол-во мест")]
+        [AddableBDTitle("Кол-во мест")]
         public int SeatsCount { get; set; }
+        [AddableBDTitle("Класс")]
         public WagonClass WagonClass { get; set; }
-        //[NotMapped]
-        //[Title("Класс вагона")]
-
+        [NotMapped]
+        [Title("Класс вагона")]
+        public string Class => WagonClass.GetTitleValue();
     }
 
 }

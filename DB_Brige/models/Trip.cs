@@ -18,11 +18,14 @@ namespace Viewer
 
         }
         public int Id { get; set; }
+        [AddableBDTitle("Поезд")]
         public Train Train { get; set; }
         [NotMapped]
         [Title("№ поезда")]
         public int TrainNum => Train.Number;
+        [AddableBDTitle("Расписание")]
         public TimeTable TimeTable { get; set; }
+        [AddableBDTitle("Дата отправления")]
         [Title("Дата отправления")]
         public DateTime DepartureDate { get; set; }
 

@@ -23,6 +23,7 @@ namespace Viewer
         
 
         public int Id { get; set; }
+        [AddableBDTitle("Станции")]
         public List<Station> Stations { get; set; }
         
         [NotMapped]
@@ -30,6 +31,7 @@ namespace Viewer
         public string RouteTitle => Stations.Count >= 2 ? $"{Stations.First().Name} - {Stations.Last().Name}" : "---";
         
         [Title("Цена без надбавок")]
+        [AddableBDTitle("Цена без надбавок")]
         public double Price { get; set; }
     }
 

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Viewer.ControlsInput
 {
-    public partial class DateInputControl : UserControl
+    public partial class DateInputControl : UserControl, IControlInput
     {
         public DateInputControl(string label)
         {

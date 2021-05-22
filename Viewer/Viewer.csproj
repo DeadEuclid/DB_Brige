@@ -106,7 +106,7 @@
     <Compile Include="ControlsInput\HeadAddFormControl.Designer.cs">
       <DependentUpon>HeadAddFormControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="ControlsInput\IControlInputcs.cs" />
+    <Compile Include="ControlsInput\IControlInput.cs" />
     <Compile Include="ControlsInput\TextInputControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -211,9 +211,7 @@
       <Name>DB</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DemoAddForms\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

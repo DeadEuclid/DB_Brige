@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Viewer.ControlsInput
 {
-    public partial class TextInputControl : UserControl
+    public partial class TextInputControl : UserControl, IControlInput
     {
         public TextInputControl(string label)
         {

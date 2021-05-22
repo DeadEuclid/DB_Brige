@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Viewer.ControlsInput
 {
-    public partial class ComboInputControl : UserControl
+    public partial class ComboInputControl : UserControl, IControlInput
     {
         public ComboInputControl(string label)
         {

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Viewer.ControlsInput
 {
-    interface IControlInputcs
+   public interface IControlInput
     {
     }
 }

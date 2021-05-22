@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Viewer.ControlsInput
 {
-    public partial class HeadAddFormControl : UserControl
+    public partial class HeadAddFormControl : UserControl, IControlInput
     {
         public HeadAddFormControl()
         {

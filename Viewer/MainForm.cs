@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using AutoGrid;
 using System.Reflection;
+using Viewer.ControlsInput;
 
 namespace Viewer
 {
@@ -22,7 +23,7 @@ namespace Viewer
             InitializeComponent();
         }
         StationContext Context = new StationContext();
-         TableForm TableForm;
+        TableForm TableForm;
 
         private void InitTableForm(DbSet set)
         {
@@ -30,6 +31,8 @@ namespace Viewer
             this.Hide();
             TableForm.ShowDialog();
             this.Show();
+        }
+
         }
         private void stationButon_Click(object sender, EventArgs e)
         {
