@@ -9,9 +9,17 @@ using System.Reflection;
 
 namespace AutoGrid
 {
-    public class Title : Attribute,ITitle
+    public class Title : Attribute
     {
         public Title(string name)
+        {
+            Name = name;
+        }
+        public string Name { get; }
+    }
+    public class AddableBDTitle:Attribute
+    {
+        public AddableBDTitle(string name)
         {
             Name = name;
         }

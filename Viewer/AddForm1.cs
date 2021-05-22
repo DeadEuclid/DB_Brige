@@ -22,7 +22,7 @@ namespace Viewer
             this.Text = "Добавление " + type.GetTitle();
             string[] titles = type.GetTitlesPropery();
             Controls.Add(new HeadAddFormControl());
-            TripAdd();
+            PersonAdd();
 
             
 
