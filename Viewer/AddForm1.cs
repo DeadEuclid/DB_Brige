@@ -15,18 +15,28 @@ namespace Viewer
 {
     public partial class AddForm1 : Form
     {
-        public AddForm1(Type type1)
+        public AddForm1()
         {
-            Type type = typeof(Trip);
-            InitializeComponent();
-            this.Text = "Добавление " + type.GetTitle();
-            string[] titles = type.GetTitlesPropery();
+            //Type type = typeof(Trip);
+            //base.InitializeComponent();
+            //this.Text = "Добавление " + type.GetTitle();
+            //string[] titles = type.GetTitlesProperty();
+            //TripAdd();
+            Width = 420;
             Controls.Add(new HeadAddFormControl());
-            TripAdd();
+        }
 
-            
+        void RouteAdd()
+        {
 
+            Controls.Add(new ComboWithControlControler("Станции"));
+            Controls.Add(new TextInputControl("Базовая цена билета"));
+        }
+
+        void AddControls()
+        {
             int i = 0;
+
             foreach (Control control in Controls)
             {
                 control.Margin = new Padding(100);
@@ -36,22 +46,23 @@ namespace Viewer
             }
         }
 
-        void RouteAdd()
+        public void Show<T>()
         {
+            var instance = Activator.CreateInstance<T>();
+            Type type = typeof(T);
+            var properties = type.GetPropertiesWithAttribute<Title>();
 
-            Controls.Add(new ComboWithControlControler("Станции"));
-            Controls.Add(new TextInputControl("Базовая цена билета"));
-        }
-        void PersonAdd()
-        {
-            Type type = typeof(Person);
-            string[] titles = type.GetTitlesPropery();
-            Controls.Add(new TextInputControl(titles[0]));
-            Controls.Add(new TextInputControl(titles[1]));
-            Controls.Add(new TextInputControl(titles[2]));
+            foreach (var prop in properties)
+            {
+                var control = new TextInputControl(prop.Value.Name);
+                control.Value.Enter += (sender, args) => prop.Key.SetValue(instance, ((TextBox)sender).Text);
+                Controls.Add(control);
+            }
+
+            AddControls();
         }
         void StationAdd()
-        { 
+        {
             Controls.Add(new ComboWithControlControler("Машруты станции"));
             Controls.Add(new TextInputControl("Название станции"));
 

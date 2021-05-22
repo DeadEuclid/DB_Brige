@@ -17,7 +17,10 @@ namespace Viewer
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AddForm1(typeof(Person)));
+
+            var form = new AddForm1();
+            form.Show<Person>();
+            Application.Run(form);
 
         }
     }
