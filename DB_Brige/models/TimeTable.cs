@@ -18,7 +18,7 @@ namespace Viewer
         public string WeekTable { get; set; }
         [NotMapped]
         [Title("Маршрут")]
-        public string RouteTitle => Route.RouteTitle;
+        public string RouteTitle => Route.Name;
         [AddableBDTitle("Маршрут")]
         public Route Route { get; set; }
 

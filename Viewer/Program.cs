@@ -18,8 +18,8 @@ namespace Viewer
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            var form = new AddForm1();
-            form.Show<Person>();
+            var form = new AddForm1(typeof( Route ));
+            //form.Show<Person>();
             Application.Run(form);
 
         }

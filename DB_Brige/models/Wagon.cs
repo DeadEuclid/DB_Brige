@@ -7,7 +7,7 @@ namespace Viewer
     [Title("вагонов")]
     public class Wagon
     {
-        public Wagon(int seatsCount, WagonClass wagonClass,int number)
+        public Wagon(int seatsCount, WagonClass wagonClass, int number)
         {
             SeatsCount = seatsCount;
             Number = number;
@@ -26,6 +26,8 @@ namespace Viewer
         [NotMapped]
         [Title("Класс вагона")]
         public string Class => WagonClass.GetTitleValue();
+        [NotMapped]
+        public string Name => string.Format("№{0} ({1} класс)", Number.ToString(), Class);
     }
 
 }

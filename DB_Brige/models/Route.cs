@@ -28,7 +28,7 @@ namespace Viewer
         
         [NotMapped]
         [Title("Маршрут")]
-        public string RouteTitle => Stations.Count >= 2 ? $"{Stations.First().Name} - {Stations.Last().Name}" : "---";
+        public string Name => Stations.Count >= 2 ? $"{Stations.First().Name} - {Stations.Last().Name}" : "---";
         
         [Title("Цена без надбавок")]
         [AddableBDTitle("Цена без надбавок")]

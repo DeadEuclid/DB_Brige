@@ -33,7 +33,7 @@ namespace Viewer
             this.Show();
         }
 
-        }
+        
         private void stationButon_Click(object sender, EventArgs e)
         {
             InitTableForm(Context.Stations);

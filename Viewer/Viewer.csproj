@@ -88,11 +88,11 @@
     <Compile Include="ControlsInput\ComboInputControl.Designer.cs">
       <DependentUpon>ComboInputControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="ControlsInput\ComboWithControlControler.cs">
+    <Compile Include="ControlsInput\ColectionControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ControlsInput\ComboWithControlControler.Designer.cs">
-      <DependentUpon>ComboWithControlControler.cs</DependentUpon>
+    <Compile Include="ControlsInput\ColectionControl.Designer.cs">
+      <DependentUpon>ColectionControl.cs</DependentUpon>
     </Compile>
     <Compile Include="ControlsInput\DateInputControl.cs">
       <SubType>UserControl</SubType>
@@ -119,11 +119,11 @@
     <Compile Include="ControlsInput\TimeInputControl.Designer.cs">
       <DependentUpon>TimeInputControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="ControlsInput\TimeTableControlcs.cs">
+    <Compile Include="ControlsInput\TimeTableControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ControlsInput\TimeTableControlcs.Designer.cs">
-      <DependentUpon>TimeTableControlcs.cs</DependentUpon>
+    <Compile Include="ControlsInput\TimeTableControl.Designer.cs">
+      <DependentUpon>TimeTableControl.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -154,8 +154,8 @@
     <EmbeddedResource Include="ControlsInput\ComboInputControl.resx">
       <DependentUpon>ComboInputControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ControlsInput\ComboWithControlControler.resx">
-      <DependentUpon>ComboWithControlControler.cs</DependentUpon>
+    <EmbeddedResource Include="ControlsInput\ColectionControl.resx">
+      <DependentUpon>ColectionControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ControlsInput\DateInputControl.resx">
       <DependentUpon>DateInputControl.cs</DependentUpon>
@@ -169,8 +169,8 @@
     <EmbeddedResource Include="ControlsInput\TimeInputControl.resx">
       <DependentUpon>TimeInputControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ControlsInput\TimeTableControlcs.resx">
-      <DependentUpon>TimeTableControlcs.cs</DependentUpon>
+    <EmbeddedResource Include="ControlsInput\TimeTableControl.resx">
+      <DependentUpon>TimeTableControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

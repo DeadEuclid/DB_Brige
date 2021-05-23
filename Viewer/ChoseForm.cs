@@ -14,16 +14,19 @@ namespace Viewer
 {
     public partial class ChoseForm : Form
     {
-        public ChoseForm(DbSet set)
+        public ChoseForm(IEnumerable<object> set)
         {
             InitializeComponent();
             viewProcessor = new DataGridProcessor(dataGridView1);
-            var typeModel = set.GetType().GetGenericArguments()[0];
+            type = set.GetType();
+            var typeModel = type.GetGenericArguments()[0];
             var valueName = typeModel.GetTitle();
             this.Text = "Выбор " + valueName;
 
             viewProcessor.ShowData((IEnumerable<object>)set, typeModel);
         }
+        Type type;
+        public object Value { get; set; }
         //public ChoseForm()
         //{
         //    ExemType exem = ExemType.Student;

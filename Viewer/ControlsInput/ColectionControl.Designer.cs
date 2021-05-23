@@ -1,7 +1,7 @@
 ﻿
 namespace Viewer.ControlsInput
 {
-    partial class ComboWithControlControler
+    partial class ColectionControl
     {
         /// <summary> 
         /// Обязательная переменная конструктора.
@@ -42,6 +42,7 @@ namespace Viewer.ControlsInput
             | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(283, 122);
+            this.comboBox1.MaxDropDownItems = 100;
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(235, 24);
             this.comboBox1.TabIndex = 0;
@@ -67,6 +68,7 @@ namespace Viewer.ControlsInput
             this.button1.TabIndex = 2;
             this.button1.Text = "Добавить";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -86,7 +88,7 @@ namespace Viewer.ControlsInput
             this.label1.TabIndex = 4;
             this.label1.Text = "label1";
             // 
-            // ComboWithControlControler
+            // ColectionControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -95,7 +97,7 @@ namespace Viewer.ControlsInput
             this.Controls.Add(this.button1);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.comboBox1);
-            this.Name = "ComboWithControlControler";
+            this.Name = "ColectionControl";
             this.Size = new System.Drawing.Size(521, 150);
             this.ResumeLayout(false);
             this.PerformLayout();
