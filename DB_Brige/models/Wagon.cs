@@ -28,6 +28,10 @@ namespace Viewer
         public string Class => WagonClass.GetTitleValue();
         [NotMapped]
         public string Name => string.Format("№{0} ({1} класс)", Number.ToString(), Class);
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 
 }

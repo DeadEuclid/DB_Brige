@@ -49,6 +49,7 @@
             this.DataGrid.Name = "DataGrid";
             this.DataGrid.RowHeadersWidth = 51;
             this.DataGrid.RowTemplate.Height = 24;
+            this.DataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DataGrid.Size = new System.Drawing.Size(2132, 1081);
             this.DataGrid.TabIndex = 0;
             // 

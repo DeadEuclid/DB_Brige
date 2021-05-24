@@ -19,11 +19,12 @@ namespace Viewer
        [Title("Название станции")]
        [AddableBDTitle("Название станции")]
         public string Name { get; set; }
-        [AddableBDTitle("Маршруты")]
+
         public override string ToString()
         {
             return Name;
-        }
+        }    
+        [AddableBDTitle("Маршруты")]
         public List<Route> Routes { get; set; }
     }
 

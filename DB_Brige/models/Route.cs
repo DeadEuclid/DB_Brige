@@ -33,6 +33,10 @@ namespace Viewer
         [Title("Цена без надбавок")]
         [AddableBDTitle("Цена без надбавок")]
         public double Price { get; set; }
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 
 }

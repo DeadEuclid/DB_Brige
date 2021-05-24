@@ -11,8 +11,11 @@ namespace AutoGrid
         public DataGridProcessor(DataGridView dataGrid)
         {
             DataGrid = dataGrid;
+            DataGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
         }
         private DataGridView DataGrid;
+        public object SelectedItem => DataGrid.SelectedRows[0].DataBoundItem;
         private void Init(Type viewType)
         {
             this.DataGrid.Rows.Clear();
@@ -23,7 +26,7 @@ namespace AutoGrid
             foreach (var name in Pairs.Select(x => x.Name))
                 this.DataGrid.Columns.Add(name.ToLower(), name);
         }
-        
+
         public void ShowData(IEnumerable<object> items, Type viewType)
         {
             Init(viewType);
