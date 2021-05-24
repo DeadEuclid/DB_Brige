@@ -25,6 +25,7 @@ namespace Viewer
         public int TrainNum => Train.Number;
         [AddableBDTitle("Расписание")]
         public TimeTable TimeTable { get; set; }
+        [NotMapped]
         [AddableBDTitle("Дата отправления")]
         [Title("Дата отправления")]
         public DateTime DepartureDate { get; set; }

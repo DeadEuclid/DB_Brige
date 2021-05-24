@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Linq;
-
+using Viewer.AddForms;
 
 namespace Viewer
 {
@@ -44,7 +44,9 @@ namespace Viewer
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            var addForm = new AddForm(Type);
+            //var addForm = new AddForm(Type);
+            //addForm.ShowDialog();
+            var addForm = new PersonAddForm();
             addForm.ShowDialog();
             if (addForm.DialogResult==DialogResult.OK)
             {

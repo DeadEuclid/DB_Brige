@@ -64,6 +64,48 @@
     <Compile Include="AddForm.Designer.cs">
       <DependentUpon>AddForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddForms\PersonAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddForms\PersonAddForm.Designer.cs">
+      <DependentUpon>PersonAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddForms\RouteAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddForms\RouteAddForm.Designer.cs">
+      <DependentUpon>RouteAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddForms\StationAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddForms\StationAddForm.Designer.cs">
+      <DependentUpon>StationAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddForms\TimeTableAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddForms\TimeTableAddForm.Designer.cs">
+      <DependentUpon>TimeTableAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddForms\TrainAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddForms\TrainAddForm.Designer.cs">
+      <DependentUpon>TrainAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddForms\TripAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddForms\TripAddForm.Designer.cs">
+      <DependentUpon>TripAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddForms\WagonAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddForms\WagonAddForm.Designer.cs">
+      <DependentUpon>WagonAddForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChoseForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +175,12 @@
     <Compile Include="TableForm.Designer.cs">
       <DependentUpon>TableForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="TiketsViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TiketsViewForm.Designer.cs">
+      <DependentUpon>TiketsViewForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddForm.resx">
       <DependentUpon>AddForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -177,6 +225,9 @@
     </Compile>
     <EmbeddedResource Include="TableForm.resx">
       <DependentUpon>TableForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TiketsViewForm.resx">
+      <DependentUpon>TiketsViewForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

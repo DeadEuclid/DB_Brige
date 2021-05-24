@@ -13,13 +13,13 @@ namespace Viewer
         {
 
         }
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            modelBuilder.Properties<DateTime>()
-                .Configure(property => property.HasColumnType("datetime2"));
-            modelBuilder.Properties<decimal>()
-                .Configure(property => property.HasPrecision(19, 8));
-        }
+        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        //{
+        //    modelBuilder.Properties<DateTime>()
+        //        .Configure(property => property.HasColumnType("datetime2"));
+        //    modelBuilder.Properties<decimal>()
+        //        .Configure(property => property.HasPrecision(19, 8));
+        //}
 
         public DbSet<Route> Routes { get; set; }
         public DbSet<Trip> Trips { get; set; }

@@ -80,10 +80,10 @@ namespace Viewer
 
             switch (type.Name)
             {
-                case "Person":
-                    label = getPropetyTitle("FirstName");
-                    dic.Add(property, new TextInputControl(label));
+                case "Person": 
                     label = getPropetyTitle("LastName");
+                    dic.Add(property, new TextInputControl(label));
+                    label = getPropetyTitle("FirstName");
                     dic.Add(property, new TextInputControl(label));
                     label = getPropetyTitle("MiddleName");
                     dic.Add(property, new TextInputControl(label));

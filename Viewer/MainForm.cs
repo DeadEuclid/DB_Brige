@@ -66,7 +66,10 @@ namespace Viewer
 
         private void tiketButton_Click(object sender, EventArgs e)
         {
-            InitTableForm(Context.Tickets.ToList());
+            this.Hide();
+
+            new TiketsViewForm().ShowDialog();
+            this.Show();
 
         }
 
