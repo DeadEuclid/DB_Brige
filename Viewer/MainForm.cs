@@ -18,60 +18,68 @@ namespace Viewer
     {
         public MainForm()
         {
-            var exem = ExemType.Student;
-            var test = exem.GetTitleValue();
             InitializeComponent();
         }
-        StationContext Context = new StationContext();
-        TableForm TableForm;
+        StationContext Context=new StationContext();
 
-        private void InitTableForm(DbSet set)
+        TableForm TableForm=new TableForm();
+
+        private void InitTableForm<T>(List<T> set) where T:class
         {
-            TableForm = new TableForm(set);
+
+
             this.Hide();
-            TableForm.ShowDialog();
+
+          TableForm.Init<T>(set).ShowDialog();
             this.Show();
         }
 
         
         private void stationButon_Click(object sender, EventArgs e)
         {
-            InitTableForm(Context.Stations);
+            InitTableForm(Context.Stations.ToList());
         }
 
         private void timeTableButton_Click(object sender, EventArgs e)
         {
-            InitTableForm(Context.TimeTables);
+            InitTableForm(Context.TimeTables.ToList());
+
         }
 
         private void routeButton_Click(object sender, EventArgs e)
         {
-            InitTableForm(Context.Routes);
+            InitTableForm(Context.Routes.ToList());
+
         }
 
         private void tripButton_Click(object sender, EventArgs e)
         {
-            InitTableForm(Context.Trips);
+            InitTableForm(Context.Trips.ToList());
+
         }
 
         private void personButton_Click(object sender, EventArgs e)
         {
-            InitTableForm(Context.Persons);
+            InitTableForm(Context.Persons.ToList());
+
         }
 
         private void tiketButton_Click(object sender, EventArgs e)
         {
-            InitTableForm(Context.Tickets);
+            InitTableForm(Context.Tickets.ToList());
+
         }
 
         private void trainButton_Click(object sender, EventArgs e)
         {
-            InitTableForm(Context.Trains);
+            InitTableForm(Context.Trains.ToList());
+
         }
 
         private void WagonButton_Click(object sender, EventArgs e)
         {
-            InitTableForm(Context.Wagons);
+            InitTableForm(Context.Wagons.ToList());
+
         }
 
         private void exitButton_Click(object sender, EventArgs e)

@@ -30,7 +30,7 @@ namespace Viewer.ControlsInput
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.Value = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -42,22 +42,22 @@ namespace Viewer.ControlsInput
             this.label1.TabIndex = 0;
             this.label1.Text = "label1";
             // 
-            // Value
+            // textBox1
             // 
-            this.Value.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Value.Location = new System.Drawing.Point(181, 5);
-            this.Value.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Value.Name = "Value";
-            this.Value.Size = new System.Drawing.Size(337, 22);
-            this.Value.TabIndex = 1;
-            this.Value.TextChanged += new System.EventHandler(this.Value_TextChanged);
+            this.textBox1.Location = new System.Drawing.Point(181, 5);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(337, 22);
+            this.textBox1.TabIndex = 1;
+            this.textBox1.TextChanged += new System.EventHandler(this.Value_TextChanged);
             // 
             // TextInputControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.Value);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "TextInputControl";
@@ -70,6 +70,6 @@ namespace Viewer.ControlsInput
         #endregion
 
         private System.Windows.Forms.Label label1;
-        public System.Windows.Forms.TextBox Value;
+        public System.Windows.Forms.TextBox textBox1;
     }
 }

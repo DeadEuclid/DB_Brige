@@ -21,7 +21,15 @@ namespace Viewer.ControlsInput
 
         public void Show(object instance, PropertyInfo propertyInfo)
         {
-            Value.TabIndexChanged+= (sender, args) => propertyInfo.SetValue(instance, Value.Text);
+            textBox1.KeyUp += (sender, args) =>
+            {
+                var parsed = double.TryParse(textBox1.Text, out var number);
+                if (parsed)
+                {
+                    propertyInfo.SetValue(instance, number);
+                }
+
+            };
         }
 
         private void Value_TextChanged(object sender, EventArgs e)

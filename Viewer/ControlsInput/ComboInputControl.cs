@@ -46,7 +46,10 @@ Enum.GetValues(enumView.GetType())
             }
             public string Name { get; set; }
             public Enum Value { get; set; }
-
+            public object GetValue()
+            {
+                return Value;
+            }
         }
     }
 }

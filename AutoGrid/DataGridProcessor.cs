@@ -23,28 +23,34 @@ namespace AutoGrid
             foreach (var name in Pairs.Select(x => x.Name))
                 this.DataGrid.Columns.Add(name.ToLower(), name);
         }
-
-
+        
         public void ShowData(IEnumerable<object> items, Type viewType)
         {
             Init(viewType);
             foreach (var item in items)
             {
-                var index = DataGrid.Rows.Count - 1;
-                DataGrid.Rows.Add();
-                int col = 0;
-
-                foreach (var pair in Pairs)
-                {
-                    var val = pair.GetFunc(item);
-                    if (val != null)
-                        DataGrid[col, index].Value = val.ToString();
-                    col++;
-                }
+                AddRow(item);
             }
-
         }
+        public void AddRow(object item)
+        {
+            var index = DataGrid.Rows.Count;
+            DataGrid.Rows.Add();
+            int col = 0;
 
+            foreach (var pair in Pairs)
+            {
+                var val = pair.GetFunc(item);
+                if (val != null)
+                    DataGrid[col, index].Value = val.ToString();
+                col++;
+            }
+        }
+        public void ShowData<T>(IEnumerable<T> items)where T:class
+        {
+
+            ShowData((List<T>)items,typeof( T));
+        }
 
         public IEnumerable<(Func<object, object> GetFunc, string Name)> Pairs { get; set; }
     }

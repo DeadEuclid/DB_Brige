@@ -23,5 +23,6 @@ namespace Viewer.ControlsInput
         {
             dateTimePicker1.ValueChanged += (sender, args) => propertyInfo.SetValue(instance, dateTimePicker1.Value);
         }
+
     }
 }

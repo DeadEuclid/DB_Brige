@@ -3,71 +3,174 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Viewer.ControlsInput;
+
 
 namespace Viewer
 {
     public partial class AddForm : Form
     {
-        public AddForm()
+        public AddForm(Type type)
         {
-
-            InitializeComponent();
-            Init(typeof(Ticket));
-        }
-
-        public void Init(Type viewType)
-        {
-            var fields = viewType.GetProperties();
-            var a = fields.Select(f => (info: (f), ((Title)f.GetCustomAttributes(typeof(Title), false).FirstOrDefault())?.Name)).Where(x => x.Name != null);
-
-            foreach (var item in a) TextBoxes.Add(item.Name, (item.info, new TextBox()));
-
-            foreach (var tb in TextBoxes)
+            DialogResult = new DialogResult();
+            this.Text = "Добавление " + type.GetTitle();
+            Instanse = Activator.CreateInstance(type);
+            Type = type;
+            Width = 420;
+            Controls.Add(new HeadAddFormControl());
+            ((HeadAddFormControl)Controls[0]).Init();
+            Dictionary<PropertyInfo, IControlInput> dic = GetControls(type);
+            foreach (var propContrPair in dic)
             {
-                this.flowLayoutPanel1.Controls.Add(new Label() { Text = tb.Key, Margin = new Padding(0, 10, 0, 0) });
-                this.flowLayoutPanel1.Controls.Add(tb.Value.text);
+                IControlInput control = propContrPair.Value;
+                PropertyInfo property = propContrPair.Key;
+                control.Show(Instanse, propContrPair.Key);
+                
+                Controls.Add((UserControl)control);
+
+
             }
-
+            Init();
         }
+        StationContext Context = new StationContext();
+        Type Type;
+        public object Instanse;
 
-        public Dictionary<string, (PropertyInfo info, TextBox text)> TextBoxes { get; set; } =
-            new Dictionary<string, (PropertyInfo info, TextBox text)>();
-
-        private void AddForm_Load(object sender, EventArgs e)
+        private DialogResult dialogResult;
+        public new DialogResult DialogResult
         {
-
-        }
-
-        public void Add(Type type)
-        {
-            var data = Activator.CreateInstance(type);
-
-            foreach (var item in TextBoxes)
+            get { return dialogResult; }
+            set
             {
-                var type_name = item.Value.info.PropertyType.Name;
-                if (type_name == "Int32")
+                dialogResult = value;
+                if (dialogResult == DialogResult.OK)
                 {
-                    int.TryParse(item.Value.text.Text, out var r);
-                    item.Value.info.SetValue(data, r);
+                    DbsetFabric(Type).Add(Instanse);
+                    Context.SaveChanges();
+             
+                    Close();
+                    return;
                 }
-
-                if (type_name == "String")
+                if (dialogResult == DialogResult.Cancel)
                 {
-                    item.Value.info.SetValue(data, item.Value.text.Text);
+                    Close();
                 }
+               
             }
+        }
+        public Dictionary<PropertyInfo, IControlInput> GetControls(Type type)
+        {
+            PropertyInfo property;
+            string getPropetyTitle(string nameProperty)
+            {
+                property = Instanse.GetType().GetProperty(nameProperty);
+                var title = (AddableBDTitle)property.GetCustomAttributes(false).Where(a => a.GetType() == typeof(AddableBDTitle)).First();
+                return title.Name;
+            }
+            var props = type.GetProperties();
+            var dic = new Dictionary<PropertyInfo, IControlInput>();
+            string label;
 
+            switch (type.Name)
+            {
+                case "Person":
+                    label = getPropetyTitle("FirstName");
+                    dic.Add(property, new TextInputControl(label));
+                    label = getPropetyTitle("LastName");
+                    dic.Add(property, new TextInputControl(label));
+                    label = getPropetyTitle("MiddleName");
+                    dic.Add(property, new TextInputControl(label));
+                    break;
+                case "Route":
+                    label = getPropetyTitle("Stations");
+                    dic.Add(property, new ColectionControl(label, Context.Stations.ToList()));
+                    label = getPropetyTitle("Price");
+                    dic.Add(property, new TextInputControl(label));
+                    break;
+                case "Station":
+                    label = getPropetyTitle("Name");
+                    dic.Add(property, new TextInputControl(label));
+                    label = getPropetyTitle("Routes");
+                    dic.Add(property, new ColectionControl(label, Context.Routes.ToList()));
+                    break;
+                case "TimeTable":
+                    label = getPropetyTitle("DepartureTime");
+                    dic.Add(property, new DateInputControl(label));
+                    label = getPropetyTitle("WeekTable");
+                    dic.Add(property, new TimeTableControl(label));
+                    label = getPropetyTitle("Route");
+                    dic.Add(property, new ChoseInputControl(label, Context.Routes.ToList()));
+                    break;
+                case "Train":
+                    label = getPropetyTitle("Number");
+                    dic.Add(property, new TextInputControl(label));
+                    label = getPropetyTitle("Wagon");
+                    dic.Add(property, new ChoseInputControl(label, Context.Wagons.ToList()));
+                    break;
+                case "Trip":
+                    label = getPropetyTitle("Train");
+                    dic.Add(property, new ChoseInputControl(label, Context.Trains.ToList()));
+                    label = getPropetyTitle("TimeTable");
+                    dic.Add(property, new ChoseInputControl(label, Context.TimeTables.ToList()));
+                    label = getPropetyTitle("DepartureDate");
+                    dic.Add(property, new DateInputControl(label));
+                    break;
+                case "Wagon":
+                    label = getPropetyTitle("Number");
+                    dic.Add(property, new TextInputControl(label));
+                    label = getPropetyTitle("SeatsCount");
+                    dic.Add(property, new TextInputControl(label));
+                    label = getPropetyTitle("WagonClass");
+                    dic.Add(property, new ComboInputControl(label, typeof(WagonClass)));
+                    break;
+
+                default:
+                    throw new NotImplementedException("Данный тип не добовляется в базу данных");
+                    break;
+            }
+            return dic;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+
+
+        void Init()
         {
-            Add(typeof(Ticket));
+            int i = 0;
+
+            foreach (Control control in Controls)
+            {
+                control.Margin = new Padding(100);
+                control.Top = control.Size.Height * i;
+                control.Anchor = (AnchorStyles)((byte)AnchorStyles.Left + (byte)AnchorStyles.Right + (byte)AnchorStyles.Top);
+                i++;
+            }
+        }
+
+        public DbSet DbsetFabric(Type type)
+        {
+
+            if (type == typeof(Person))
+                return Context.Persons;
+            if (type == typeof(Route))
+                return Context.Routes;
+            if (type == typeof(Station))
+                return Context.Stations;
+            if (type == typeof(TimeTable))
+                return Context.TimeTables;
+            if (type == typeof(Train))
+                return Context.Trains;
+            if (type == typeof(Wagon))
+                return Context.Wagons;
+            else throw new Exception("Данный тип не записывается в базу");
+
+
         }
     }
 }

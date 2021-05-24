@@ -14,6 +14,24 @@ namespace Viewer.ControlsInput
         public HeadAddFormControl()
         {
             InitializeComponent();
+            
+        
+        }
+        public void Init()
+        {
+
+            addForm = (AddForm)this.FindForm();
+        }
+        AddForm addForm;
+        private void canselButton_Click(object sender, EventArgs e)
+        {
+            addForm.DialogResult=DialogResult.Cancel;
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            addForm.DialogResult = DialogResult.OK;
         }
     }
 }

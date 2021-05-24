@@ -9,7 +9,9 @@ namespace Viewer.ControlsInput
 {
    public interface IControlInput
     {
+
          void Show(object instance, PropertyInfo propertyInfo);
+
 
     }
 }

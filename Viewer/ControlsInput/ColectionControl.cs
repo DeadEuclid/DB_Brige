@@ -23,30 +23,57 @@ namespace Viewer.ControlsInput
             comboBox1.DataSource = set;
             comboBox1.DisplayMember = "Name";
 
-            listBox1.DataSource = Value;
+            listBox1.DataSource = Values;
             listBox1.DisplayMember = "Name";
 
         }
         private Type type;
         private object value;
-        public List<object> Value = new List<object>();
+        public List<object> Value => Values.ToList();
+        private BindingList<object> Values = new BindingList<object>();
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             value = comboBox1.SelectedItem;
         }
-
+        public object ConvertList(List<object> value, Type type)
+        {
+            var containedType = type.GenericTypeArguments.First();
+            return value.Select(item => Convert.ChangeType(item, containedType)).ToList();
+        }
         public void Show(object instance, PropertyInfo propertyInfo)
         {
-            listBox1.DataBindings.CollectionChanged += (sender, args) => propertyInfo.SetValue(instance, Value);
+
+            Values.ListChanged +=
+               (sender, args) =>
+               {
+                   var list = ConvertList(Value, propertyInfo.PropertyType);
+                   propertyInfo.SetValue(instance, list);
+               };
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (!Value.Contains(value))
+
+            if (!Values.Contains(value))
             {
-                Value.Add(value);
+
+                Values.Add(value);
+                ////listBox1.DataSource=Value;
+                //listBox1.Update();
+                //listBox1.Refresh();
+
             }
 
+
+        }
+        public object GetValue()
+        {
+            return Value;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Values.Remove(listBox1.SelectedItem);
         }
     }
 }

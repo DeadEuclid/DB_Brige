@@ -37,5 +37,10 @@ namespace Viewer.ControlsInput
             Value = choseForm.Value;
 
         }
+
+        public object GetValue()
+        {
+            return Value;
+        }
     }
 }
