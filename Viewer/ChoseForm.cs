@@ -17,13 +17,14 @@ namespace Viewer
         public ChoseForm(IEnumerable<object> set)
         {
             InitializeComponent();
-            viewProcessor = new DataGridProcessor(dataGridView1);
+
             type = set.GetType();
             var typeModel = type.GetGenericArguments()[0];
+            viewProcessor = new DataGridProcessor(dataGridView1,set,typeModel);
             var valueName = typeModel.GetTitle();
             this.Text = "Выбор " + valueName;
 
-            viewProcessor.ShowData((IEnumerable<object>)set, typeModel);
+            viewProcessor.ShowData((IEnumerable<object>)set,typeModel);
         }
         Type type;
         public object Value { get; set; }

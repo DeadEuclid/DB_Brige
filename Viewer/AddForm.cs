@@ -81,16 +81,17 @@ namespace Viewer
             switch (type.Name)
             {
                 case "Person":
-                    label = getPropetyTitle("FirstName");
-                    dic.Add(property, new TextInputControl(label));
                     label = getPropetyTitle("LastName");
+                    dic.Add(property, new TextInputControl(label));
+                    label = getPropetyTitle("FirstName");
                     dic.Add(property, new TextInputControl(label));
                     label = getPropetyTitle("MiddleName");
                     dic.Add(property, new TextInputControl(label));
                     break;
                 case "Route":
                     label = getPropetyTitle("Stations");
-                    dic.Add(property, new ColectionControl(label, Context.Stations.ToList()));
+                    //dic.Add(property, new ColectionControl(label, Context.Stations.ToList()));
+                    dic.Add(property, new StationControl(Context.Stations.ToList()));
                     label = getPropetyTitle("Price");
                     dic.Add(property, new TextInputControl(label));
                     break;
@@ -111,7 +112,7 @@ namespace Viewer
                 case "Train":
                     label = getPropetyTitle("Number");
                     dic.Add(property, new TextInputControl(label));
-                    label = getPropetyTitle("Wagon");
+                    label = getPropetyTitle("Wagons");
                     dic.Add(property, new ChoseInputControl(label, Context.Wagons.ToList()));
                     break;
                 case "Trip":
@@ -133,7 +134,7 @@ namespace Viewer
 
                 default:
                     throw new NotImplementedException("Данный тип не добовляется в базу данных");
-                    break;
+
             }
             return dic;
         }

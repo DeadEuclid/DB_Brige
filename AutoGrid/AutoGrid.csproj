@@ -46,7 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataGridProcessor.cs" />
-    <Compile Include="Title.cs" />
+    <Compile Include="DataGridProcessor1.cs" />
     <Compile Include="DataViewer.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -54,6 +54,7 @@
       <DependentUpon>DataViewer.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Title.cs" />
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>

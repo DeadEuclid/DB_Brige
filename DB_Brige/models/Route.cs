@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -9,7 +10,7 @@ namespace Viewer
     [Title("маршрутов")]
     public class Route
     {
-        public Route(List<Station> stations, double price)
+        public Route(List<Station> stations, int price)
         {
 
             Stations = stations;
@@ -28,11 +29,14 @@ namespace Viewer
         
         [NotMapped]
         [Title("Маршрут")]
+        [System.ComponentModel.DisplayName("Маршрут")]
         public string Name => Stations.Count >= 2 ? $"{Stations.First().Name} - {Stations.Last().Name}" : "---";
         
         [Title("Цена без надбавок")]
         [AddableBDTitle("Цена без надбавок")]
-        public double Price { get; set; }
+        [System.ComponentModel.DisplayName("Цена без надбавок")]
+
+        public int Price { get; set; }
         public override string ToString()
         {
             return Name;

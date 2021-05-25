@@ -86,6 +86,10 @@
     <Compile Include="Migrations\202105200706234_WagonTrain_number.designer.cs">
       <DependentUpon>202105200706234_WagonTrain_number.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105250253479_delDepDateandetc.cs" />
+    <Compile Include="Migrations\202105250253479_delDepDateandetc.designer.cs">
+      <DependentUpon>202105250253479_delDepDateandetc.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="models\ExemType.cs" />
     <Compile Include="models\Person.cs" />
@@ -122,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105200706234_WagonTrain_number.resx">
       <DependentUpon>202105200706234_WagonTrain_number.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105250253479_delDepDateandetc.resx">
+      <DependentUpon>202105250253479_delDepDateandetc.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

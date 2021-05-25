@@ -21,13 +21,15 @@ namespace Viewer.ControlsInput
 
         public void Show(object instance, PropertyInfo propertyInfo)
         {
-            textBox1.KeyUp += (sender, args) =>
+            textBox1.Leave += (sender, args) =>
             {
-                var parsed = double.TryParse(textBox1.Text, out var number);
+                var parsed = int.TryParse(textBox1.Text, out var number);
                 if (parsed)
                 {
                     propertyInfo.SetValue(instance, number);
                 }
+                else 
+                { propertyInfo.SetValue(instance, textBox1.Text); }
 
             };
         }

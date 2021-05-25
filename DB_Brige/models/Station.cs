@@ -1,5 +1,6 @@
 ﻿using AutoGrid;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace Viewer
 {
@@ -17,7 +18,8 @@ namespace Viewer
         }
         public int Id { get; set; }
        [Title("Название станции")]
-       [AddableBDTitle("Название станции")]
+       [System.ComponentModel.DisplayName("Название станции")]
+        [AddableBDTitle("Название станции")]
         public string Name { get; set; }
 
         public override string ToString()

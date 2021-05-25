@@ -10,17 +10,17 @@ namespace AutoGrid
 {
     public partial class DataViewer: UserControl
     {
-        public DataViewer()
-        {
-            InitializeComponent();
-            GridProcessor = new DataGridProcessor(DataGrid);
-        }
+     //   public DataViewer()
+     //   {
+     //       InitializeComponent();
+     //       GridProcessor = new DataGridProcessor(DataGrid);
+     //   }
 
-     DataGridProcessor GridProcessor;
-        public void ShowData(IEnumerable<object> items, Type viewType)
-        {
-            GridProcessor.ShowData(items, viewType);
-        }
+     //DataGridProcessor GridProcessor;
+     //   public void ShowData(IEnumerable<object> items, Type viewType)
+     //   {
+     //       GridProcessor.ShowData(items);
+     //   }
 
 
 

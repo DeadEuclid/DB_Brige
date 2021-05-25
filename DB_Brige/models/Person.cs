@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using AutoGrid;
 
 namespace Viewer
@@ -20,14 +21,17 @@ namespace Viewer
         
         [Title("Имя")] 
         [AddableBDTitle("Имя")]
+        [System.ComponentModel.DisplayName("Имя")]
         public string FirstName { get; set; }
         
         [Title("Фамилия")]
         [AddableBDTitle("Фамилия")]
+        [System.ComponentModel.DisplayName("Фамилия")]
         public string LastName { get; set; }
         
         [Title("Отчество")]
         [AddableBDTitle("Отчество")]
+        [System.ComponentModel.DisplayName("Отчество")]
         public string MiddleName { get; set; }
     }
 }

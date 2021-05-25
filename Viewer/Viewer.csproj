@@ -101,6 +101,18 @@
       <DependentUpon>HeadAddFormControl.cs</DependentUpon>
     </Compile>
     <Compile Include="ControlsInput\IControlInput.cs" />
+    <Compile Include="ControlsInput\RoutsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlsInput\RoutsControl.Designer.cs">
+      <DependentUpon>RoutsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlsInput\StationControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlsInput\StationControl.Designer.cs">
+      <DependentUpon>StationControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="ControlsInput\TextInputControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -153,6 +165,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ControlsInput\HeadAddFormControl.resx">
       <DependentUpon>HeadAddFormControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlsInput\RoutsControl.resx">
+      <DependentUpon>RoutsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlsInput\StationControl.resx">
+      <DependentUpon>StationControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ControlsInput\TextInputControl.resx">
       <DependentUpon>TextInputControl.cs</DependentUpon>
